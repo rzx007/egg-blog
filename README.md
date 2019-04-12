@@ -31,6 +31,6 @@ $ npm stop
 
 ### 踩坑
 $ 1.post请求时，需要将提交json数据显示转换JSON.stringfy为json,使用时需要显示JSON.parse(原因暂不详)
-$ 2.egg-crs 跨域处理时，会出现session设置后无法获取（原因不详）
+$ 2.egg-crs 跨域处理时，会出现session设置后无法获取（原因不详）（处理方法：前端进行代理）
 
 [egg]: https://eggjs.org

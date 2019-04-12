@@ -7,8 +7,6 @@ class LoginController extends Controller {
         const captcha = ctx.service.admin.login.getCaptcha()
         // 把生成的验证码文本信息（如：t8ec），存入session，以待验证
         ctx.session.code = captcha.text
-        console.log(ctx.session);
-        
         //返回前端
         ctx.body = captcha.text
     }
@@ -27,22 +25,22 @@ class LoginController extends Controller {
         // 验证码验证
         let isCaptchaVail = ctx.service.admin.login.checkCaptcha(code)
         if (!isCaptchaVail) {
+            resMsg.errcode = 0
             resMsg.msg = "验证码错误!"
             ctx.body = resMsg
             // 种植操作
             return
         }
-        console.log(resMsg)
         // 验证码通过
-        const userData = await ctx.service.admin.login.login({ username, password })
+        const userData = await ctx.service.admin.login.login(username, password)
         if (!userData) {
             resMsg.errcode = 0
             resMsg.msg = '用户名或密码错误'
             ctx.body = resMsg
             return
         }
-        resMsg.token = userData.token
-        resMsg.username = userData.username
+        resMsg.data.token = userData.token
+        resMsg.data.username = userData.username
         
         ctx.body = resMsg
     }

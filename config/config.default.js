@@ -11,6 +11,10 @@ module.exports = appInfo => {
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_rzx196090';
+  // 设置session的时长
+  config.session={
+    maxAge:3600 * 1000,
+  };
   // 生产模式代理静态文件目录，一般将app/public代理为根目录
   config.static = {
     prefix: '/',
@@ -38,10 +42,10 @@ module.exports = appInfo => {
     formLimit: '6mb',
   };
   // 允许请求跨
-  config.cors = {
-    origin: '*',
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
-  };
+  // config.cors = {
+  //   origin: 'http://localhost:8080',
+  //   allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+  // };
   config.security = {
     csrf: {
       enable: false,

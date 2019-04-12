@@ -17,6 +17,6 @@ module.exports = app => {
   // 接口
   router.get('/getCaptcha',controller.admin.login.getCaptcha) // 获取验证码
   router.post('/login',controller.admin.login.login)//登陆
-  router.post('/saveArticle',controller.admin.index.saveArticle)//登陆
+  router.post('/saveArticle',controller.admin.index.saveArticle)//保存文章
   
 };

@@ -17,6 +17,8 @@ class LoginService extends Service {
         code = code.toLowerCase()
         // get code from session
         let sessionCode = ctx.session.code ? ctx.session.code.toLowerCase() : null
+        console.log(code);
+        console.log(ctx.session);
         if (code === sessionCode) {
             // 销毁code
             ctx.session.code = null
@@ -25,6 +27,7 @@ class LoginService extends Service {
      }
     //  验证码通过后，登陆操作
     async login(username,password){
+        const { app } = this
         if (username) {
              // 找到则以用户id生成token
             const token = jwt.sign({

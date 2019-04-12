@@ -29,5 +29,8 @@ $ npm stop
 - Use `npm test` to run unit test.
 - Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
 
+### 踩坑
+$ 1.post请求时，需要将提交json数据显示转换JSON.stringfy为json,使用时需要显示JSON.parse(原因暂不详)
+$ 2.egg-crs 跨域处理时，会出现session设置后无法获取（原因不详）
 
 [egg]: https://eggjs.org

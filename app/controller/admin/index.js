@@ -15,14 +15,20 @@ class HomeController extends Controller {
   }
   async saveArticle() {
     const { ctx } = this;
-    const formData = ctx.request.body
-    console.log("文章：");
-    console.log(formData);
+    const article = ctx.request.body
+    article.id = ctx.helper.uuid();
+    article.url = '/article/' + article.id + '.html';
+    article.author = ctx.session.user.username;
+    const nowTime = new Date();
+    article.create_time = nowTime;
+    article.update_time = nowTime;
+    article.invisible = 1;
+    const articleTag = {} //文章tags
     let resMsg = {
       errcode: 1,
       msg: '登录成功'
     }
-    const isSave = await ctx.service.admin.index.save(formData);
+    const isSave = await ctx.service.admin.index.save(article,articleTag);
     if (!isSave) {
       resMsg = {
         errcode: 0,

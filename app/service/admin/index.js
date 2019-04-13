@@ -2,8 +2,9 @@
 const Service = require('egg').Service;;
 
 class ArticleService extends Service {
-    async save(article = {}) {
+    async save(article,articleTag) {
         const res = await this.app.mysql.insert('article', article);
+        const res1 = await this.app.mysql.insert('tags', articleTag);
         return res.affectedRows === 1;
     }
 }

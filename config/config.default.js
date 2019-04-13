@@ -46,11 +46,11 @@ module.exports = appInfo => {
   //   origin: 'http://localhost:8080',
   //   allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   // };
-  config.security = {
-    csrf: {
-      enable: false,
-    }
-  };
+  // config.security = {
+  //   csrf: {
+  //     enable: false,
+  //   }
+  // };
   // token
   config.jwt = {
     cert: 'huanggegehaoshuai' // jwt秘钥

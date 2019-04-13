@@ -12,6 +12,7 @@ body {
     background-color: #FAFAFA;
     box-sizing: border-box;
     border: 1px solid transparent;
+    font-family: Consolas, Microsoft Jhenghei, Hiragino Sans GB, Microsoft YaHei;
 }
 
 html {
@@ -41,9 +42,10 @@ a {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.forbind{
+.forbind {
     cursor: not-allowed !important;
 }
+
 .navbar {
     position: fixed;
     width: 100%;
@@ -269,4 +271,26 @@ a {
 
 .timeline-item:hover::before {
     border-color: #2196F3;
+}
+.article_title {
+    font-size: 36px;
+    line-height: 42px;
+    margin: 25px 0 40px;
+}
+.article_content {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    line-height: 2;
+    letter-spacing: 0.2px;
+    word-break: break-word;
+}
+.article_content p{
+    margin: 12px 0;
+}
+.article_content pre{
+    background-color: #212121;
+    color: #B0BEC5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 2px 4px;
 }

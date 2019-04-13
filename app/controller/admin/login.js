@@ -39,6 +39,10 @@ class LoginController extends Controller {
             ctx.body = resMsg
             return
         }
+         // 设置 Session
+        ctx.session.user = {username:userData.username};
+        // 调用 rotateCsrfSecret 刷新用户的 CSRF token
+        ctx.rotateCsrfSecret();
         resMsg.data.token = userData.token
         resMsg.data.username = userData.username
         

@@ -27,11 +27,13 @@
         <a class="home-article-read" href="{{item.url}}">
             README MORE &gt;&gt;&gt;
         </a>
+         {% if item.tags %}
         <div class="passage-tags">
             {% for ele in item.tags.split(',') %}
                 <a href="/tags/{{ele}}"><i class="iconfont">&#xe658;</i>{{ele}}</a>
             {% endfor %}
         </div> 
+        {% endif %}  
     </div>
  {% endfor %}
  

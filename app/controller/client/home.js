@@ -15,6 +15,10 @@ class HomeController extends Controller {
     }
     await ctx.render('home/home.tpl', { data: artList.list, pageIndex: artList.page, pageNum: artList.pageNum });
   }
+  async error404() {
+    const { ctx } = this;
+    await ctx.render('404/404.tpl');
+  }
 }
 
 module.exports = HomeController;

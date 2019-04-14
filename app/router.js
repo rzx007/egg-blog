@@ -14,6 +14,8 @@ module.exports = app => {
   router.get('/tags/:id',controller.client.article.tags)
   //后台服务 
   router.get('/admin', controller.admin.index.index);//首页
+  // 404处理
+  // router.get('*',  controller.client.home.error404);
   // 接口
   router.get('/getCaptcha',controller.admin.login.getCaptcha) // 获取验证码
   router.post('/login',controller.admin.login.login)//登陆

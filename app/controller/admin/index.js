@@ -24,9 +24,13 @@ class HomeController extends Controller {
     article.update_time = nowTime;
     article.invisible = 1;
     const articleTag = {} //文章tags
+    articleTag.id = article.id;
+    articleTag.title = article.title;
+    articleTag.time =  article.create_time;
+    articleTag.type = article.tags;
     let resMsg = {
       errcode: 1,
-      msg: '登录成功'
+      msg: '保存成功',
     }
     const isSave = await ctx.service.admin.index.save(article,articleTag);
     if (!isSave) {

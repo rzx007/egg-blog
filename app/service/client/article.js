@@ -14,8 +14,8 @@ class MsgService extends Service {
             const list = await this.app.mysql.query(sql);
             return list
         } else {
-            const sql = "SELECT * FROM tags WHERE type = ? LIMIT 10";
-            const list = await this.app.mysql.query(sql, [params]);
+            const sql = "SELECT * FROM tags WHERE type like  ? LIMIT 10";
+            const list = await this.app.mysql.query(sql, ['%'+params+'%']);
             console.log(list);
             return list
         }

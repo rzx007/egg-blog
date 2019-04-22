@@ -6,6 +6,8 @@ class HomeController extends Controller {
   async index() {
     // 获取文章列表
     const { ctx } = this;
+    console.log(ctx.href);
+    
     const page = ctx.query.page ? ctx.query.page : 1
     var artList = await ctx.service.client.home.index(page)
     if (artList.list) {

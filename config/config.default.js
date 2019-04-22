@@ -74,7 +74,13 @@ module.exports = appInfo => {
     // 是否加载到 agent 上，默认关闭
     agent: false,
   };
-
+  config.cluster = {
+    listen: {
+      port: 7001,
+      hostname: '192.168.0.124',
+      // path: '/var/run/egg.sock',
+    }
+  };
   // add your middleware config here
   config.middleware = [];
 

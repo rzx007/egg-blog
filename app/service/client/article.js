@@ -9,17 +9,23 @@ class MsgService extends Service {
         }
     }
     async tags(params) {
-        if (params == 'all') {
+        if (!params) {
             const sql = "SELECT * FROM tags ";
             const list = await this.app.mysql.query(sql);
             return list
         } else {
             const sql = "SELECT * FROM tags WHERE type like  ? LIMIT 10";
-            const list = await this.app.mysql.query(sql, ['%'+params+'%']);
+            const list = await this.app.mysql.query(sql, ['%' + params + '%']);
             console.log(list);
             return list
         }
 
+    }
+
+    async classify() {
+        const sql = "SELECT * FROM classify ";
+        const list = await this.app.mysql.query(sql);
+        return list
     }
 }
 module.exports = MsgService

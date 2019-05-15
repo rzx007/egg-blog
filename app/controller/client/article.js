@@ -1,5 +1,4 @@
 'use strict';
-
 const Controller = require('egg').Controller;
 
 class MsgController extends Controller {
@@ -12,7 +11,7 @@ class MsgController extends Controller {
     await ctx.render('home/article.tpl', { list: data });
   }
 
-    // 标签
+  // 标签
   async tags() {
     const { ctx } = this
     const params = ctx.params.id ? ctx.params.id : ''
@@ -25,6 +24,17 @@ class MsgController extends Controller {
       await ctx.render('home/tags.tpl', { list: data, typeStr: typeStr });
     } else {
       ctx.body = "未知分类"
+    }
+  }
+
+  // 分类
+  async classify() {
+    const { ctx } = this
+    const data = await ctx.service.client.article.classify()
+    if (data.length) {
+      await ctx.render('home/classify.tpl', { list: data });
+    } else {
+      ctx.body = "暂无分类"
     }
   }
 }

@@ -7,9 +7,10 @@ class HomeController extends Controller {
     // 获取文章列表
     const { ctx } = this;
     console.log(ctx.href);
-    
-    const page = ctx.query.page ? ctx.query.page : 1
-    var artList = await ctx.service.client.home.index(page)
+
+    const pageIndex = ctx.query.page ? ctx.query.page : 1
+    const pageSize = ctx.query.pageSize ? ctx.query.pageSize :5
+    var artList = await ctx.service.client.home.index(pageIndex,pageSize)
     if (artList.list) {
       artList.list.forEach(element => {
         element.create_time = ctx.helper.formatTime(element.create_time)

@@ -16,12 +16,14 @@ body {
 }
 
 html {
-    font-size: 16px;
+    font-size: 10px;
 }
 
 a {
+    font-size: 1.6rem;
     color: #212121;
     text-decoration: none;
+    word-break: break-word;
 }
 
 @font-face {
@@ -36,7 +38,7 @@ a {
 
 .iconfont {
     font-family: "iconfont" !important;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -54,10 +56,10 @@ a {
     background: #FAFAFA;
     display: flex;
     justify-content: space-between;
-    height: 60px;
+    height: 6rem;
     z-index: 300;
     box-sizing: border-box;
-    padding: 0 12px;
+    padding: 0 1.2rem;
 }
 
 .nav_brand,
@@ -68,14 +70,14 @@ a {
 
 .nav_right a {
     color: #9E9E9E;
-    margin-left: 15px;
+    margin-left: 1.5rem;
 }
 
 .container {
     width: 80%;
     max-width: 1024px;
     margin: 0 auto;
-    margin-top: 68px;
+    margin-top: 6.8rem;
     margin-bottom: 68px;
 }
 
@@ -101,17 +103,17 @@ a {
 }
 
 .awrrow {
-    font-size: 20px;
+    font-size: 2rem;
     text-align: center;
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
+    line-height: 4rem;
+    width: 4rem;
+    height: 4rem;
     cursor: pointer;
     color: #42A5F5;
     border-radius: 50%;
     transition: all .4s linear;
 }
-
+/* .nav_brand_name:active{ box-shadow: 0px 0px 50px #40a9ff inset; color:#fff;} */
 .awrrow:hover {
     background-color: #42A5F5;
     color: white;
@@ -124,13 +126,18 @@ a {
 .home-article-wrapper {
     display: block;
     min-height: 330px;
-    margin: 30px 0;
+    margin: 3rem 0;
     border-radius: 10px;
     background-color: #fff;
     box-sizing: border-box;
-    padding: 60px 60px 40px;
+    padding: 6rem 6rem 4rem;
 }
-
+@media screen and (max-width: 1024px) {
+    .home-article-wrapper {
+        margin: 2rem 0;
+        padding: 4rem 2rem 4rem;
+    }
+}
 .passage-meta {
     font-size: 14px;
     color: #616161;
@@ -294,4 +301,35 @@ a {
     box-sizing: border-box;
     padding: 2px 4px;
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+}
+.classify-wrap{
+    margin: 0 auto;
+    max-width: 768px;
+}
+.classify-item{
+    display: inline-block;
+    padding: 4px;
+    position: relative;
+    text-align: center;
+}
+.classify-item a{
+    line-height: 2;
+    /* font-size: 20px; */
+}
+.classify-item a:hover{
+    color: #2196F3;
+}
+.classify-item::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #2196F3;
+    right: 0;
+    bottom: 0;
+    transition: all .3s ease;
+}
+.classify-item:hover::before{
+    width: 100%;
+    right:auto;
 }

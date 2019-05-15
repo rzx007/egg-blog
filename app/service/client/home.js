@@ -1,8 +1,7 @@
 const Service = require('egg').Service
 
 class HomeService extends Service {
-    async index(page = 1) {
-       const pageSize = 5 //一次查多少条
+    async index(page = 1,pageSize=5) {
        const  pages =(page - 1)*pageSize;
         // 未传入page时，查固定条数
         const sql = "SELECT * FROM article WHERE invisible = 1 LIMIT ?,?";

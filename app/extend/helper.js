@@ -8,3 +8,12 @@ exports.uuid = function uuid() {
     uuid += (Array(3).join(0) + Math.random() * 100).slice(-3);
     return uuid;
 };
+// 处理成功响应
+exports.success = ({ ctx, res = null, msg = '请求成功' }) => {
+    ctx.body = {
+        code: 1,
+        data: res,
+        msg
+    }
+    ctx.status = 200
+}

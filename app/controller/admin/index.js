@@ -7,12 +7,14 @@ const path = require('path');
 const readFilePromise = util.promisify(fs.readFile);
 
 class HomeController extends Controller {
+  // 加载静态资源
   async index() {
     const { ctx } = this;
     ctx.response.type = 'html';
     const page = await readFilePromise(path.resolve(__dirname, '../../public/admin/index.html'));
     ctx.body = page;
   }
+  // 保存文章
   async saveArticle() {
     const { ctx } = this;
     const article = ctx.request.body
@@ -41,5 +43,6 @@ class HomeController extends Controller {
     }
     ctx.body = resMsg;
   }
+  // 
 }
 module.exports = HomeController;

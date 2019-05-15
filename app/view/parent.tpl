@@ -14,13 +14,13 @@
         <div class="nav_brand_title"><a href="/">
             <img src="/images/熊猫.png" width="40px" />
         </a></div>
-         <div class="nav_brand_name">&nbsp;|&nbsp;&nbsp;愤怒得倒霉熊</div>
+         <div class="nav_brand_name" style="font-size:16px;">&nbsp;|&nbsp;&nbsp;愤怒得倒霉熊</div>
       </div>
       <div class="nav_right">
         <div>
             <a href="/">首页</a>
             <a href="/categories">分类</a>
-            <a href="/tags/all">标签</a>
+            <a href="/classify">标签</a>
         </div>
       </div>
     </nav>
@@ -45,6 +45,7 @@
     $("#to_top").click(function(){
         $('html').animate({ scrollTop: 0 }, 500);
     })
+    
 </script>
 {% block script %}{% endblock %}
 </body>

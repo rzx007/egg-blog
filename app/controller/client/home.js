@@ -8,12 +8,12 @@ class HomeController extends Controller {
     const { ctx } = this;
     console.log(ctx.href);
 
-    const pageIndex = ctx.query.page ? ctx.query.page : 1
-    const pageSize = ctx.query.pageSize ? ctx.query.pageSize :5
-    var artList = await ctx.service.client.home.index(pageIndex,pageSize)
+    const pageIndex = ctx.query.page ? ctx.query.page : 1;
+    const pageSize = ctx.query.pageSize ? ctx.query.pageSize : 5;
+    const artList = await ctx.service.client.home.index(pageIndex, pageSize);
     if (artList.list) {
       artList.list.forEach(element => {
-        element.create_time = ctx.helper.formatTime(element.create_time)
+        element.create_time = ctx.helper.formatTime(element.create_time);
       });
     }
     await ctx.render('home/home.tpl', { data: artList.list, pageIndex: artList.page, pageNum: artList.pageNum });

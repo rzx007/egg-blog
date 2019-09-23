@@ -12,8 +12,8 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_rzx196090';
   // 设置session的时长
-  config.session={
-    maxAge:3600 * 1000,
+  config.session = {
+    maxAge: 3600 * 1000,
   };
   // 生产模式代理静态文件目录，一般将app/public代理为根目录
   config.static = {
@@ -53,7 +53,7 @@ module.exports = appInfo => {
   // };
   // token
   config.jwt = {
-    cert: 'huanggegehaoshuai' // jwt秘钥
+    cert: 'huanggegehaoshuai', // jwt秘钥
   }
   config.mysql = {
     // 单数据库信息配置
@@ -77,7 +77,7 @@ module.exports = appInfo => {
   config.cluster = {
     listen: {
       port: 7001,
-      // hostname: '192.168.0.124',
+      hostname: '0.0.0.0',
       // path: '/var/run/egg.sock',
     }
   };

@@ -1,4 +1,4 @@
-const Service = require('egg').Service
+const Service = require('egg').Service;
 
 class MsgService extends Service {
     async index(params) {
